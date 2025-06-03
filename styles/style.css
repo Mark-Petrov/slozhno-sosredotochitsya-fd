@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   inline-size: 100%;
+  background-color: var(--dark, #000028);
 }
 
 .header{
@@ -92,6 +93,7 @@ button:focus-visible{
   display: block;
 }
 
+/* Декоративные уголки */
 
 .decorated-corner {
   position: absolute;
@@ -133,6 +135,8 @@ button:focus-visible{
   height: 25px;
 }
 
+/* Декоративная надпись REC */
+
 .rec-indicator {
   position: absolute;
   top: 10px;
@@ -162,14 +166,13 @@ button:focus-visible{
 /* Блок main */
 
 .main{
-  padding: 10px;
-  background-color: var(--dark, #000028);
+  padding: 40px 10px 10px 10px;
 }
 
 .main_grid-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, min-content);
-  gap: 50px;
+  gap: 46px;
 }
 
 .content{
@@ -206,6 +209,26 @@ button:focus-visible{
 
 /* Блок footer */
 
+.footer{
+  block-size: 667px;
+  margin-top: 40px;
+  position: relative;
+  padding: auto;
+}
+
+.focus_footer{
+  padding-top: 268px;
+  text-align: center;
+  font-size: 116px;
+}
+
+.uniq_corner-top-right{
+  top: -2px;
+}
+
+.uniq_corner-bottom-left{
+  bottom: 21px;
+}
 
 
 
