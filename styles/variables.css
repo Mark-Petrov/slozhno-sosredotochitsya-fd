@@ -3,9 +3,10 @@
   и их переопределение под различные устройства
 */
 :root{
-  --header-title-color: #DB00FF;
+  --fucsia: #DB00FF;
   --accent-color: #FF0070;
   --accent-color-hover: rgba(255, 0, 112, 0.4);
-  --page-bg-color: #000028;
-  --page-text-color: #F1B2CE;
+  --dark: #000028 ;
+  --bg-omage: url('../images/cover-image-dark.png');
+  --title: #F1B2CE;
 }

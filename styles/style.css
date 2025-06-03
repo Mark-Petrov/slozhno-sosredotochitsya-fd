@@ -3,10 +3,12 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   inline-size: 100%;
+  background-color: var(--dark, #000028);
+  color: var(--dark, #000028);
 }
 
 .header{
-  background-image: url('../images/cover-image-dark.png');
+  background-image: var(--bg-image, url('../images/cover-image-dark.png'));
   background-position: center;
   background-size: cover;
   inline-size: minmax(375px, 1024px);
@@ -43,6 +45,7 @@
 
 .header__theme-menu-item {
   inline-size: 70px;
+  block-size: 26px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -51,32 +54,41 @@
   background: transparent;
   border: none;
   text-transform: lowercase;
+  color: var(--accent-color);
 }
 
 .header__theme-menu-item:hover,
 .header__theme-menu-item:focus-within {
   box-sizing: border-box;
-  width: 100%;
+  border: 1px solid var(--accent-color-hover, #ff0070);
 }
 
 button:focus{
   outline: none;
 }
 
+button:focus-visible{
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+}
+
 .header_title{
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   grid-area: title;
+  color: var(--fucsia, #DB00FF);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
 .header_container{
   grid-area: content;
   inline-size: 355px;
+  background-color: var(--accent-color, #ff0070);
 }
 
 .header_content{
   font-size: 18px;
   text-wrap: wrap;
+  color: var(--dark, #000028);
 }
 
 .header_content-line {
@@ -94,11 +106,15 @@ button:focus{
 .decorated-corner_top-right {
   top: 10px;
   right: 10px;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
 }
 
 .decorated-corner_bottom-left {
   bottom: 10px;
   left: 10px;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
 }
 
 .decorated-corner_top-right::before,
@@ -135,6 +151,7 @@ button:focus{
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
+  color: var(--accent-color, #ff0070);
 }
 
 .rec-indicator__dot {
@@ -142,6 +159,8 @@ button:focus{
   width: 9px;
   height: 9px;
   border-radius: 50%;
+  background: var(--accent-color, #ff0070);
+  box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
 }
 
 @media (768px <= width < 1024px) {

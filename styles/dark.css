@@ -4,62 +4,6 @@
   переключая тему
 */
 
-:root.theme-dark {
-  --header-title-color: #DB00FF;
-  --accent-color: #FF0070;
-  --accent-color-hover: rgba(255, 0, 112, 0.4);
-  --page-bg-color: #000028;
-  --page-text-color: #F1B2CE;
-}
-
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-color: var(--page-bg-color, #ffffff);
-  color: var(--page-text-color, #000000);
-}
-
-.theme-dark .header__theme-menu-button{
-  color: var(--accent-color);
-}
-
 .theme-dark .header__theme-menu-item:last-child{
   border: 1px solid var(--accent-color, #ff0070);
-}
-
-.theme-dark .header__theme-menu-item:hover,
-.theme-dark .header__theme-menu-item:focus-within {
-  border: 1px solid var(--accent-color-hover, #ff0070);
-}
-
-.theme-dark button:focus-visible{
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-}
-
-.theme-dark .header_title{
-  color: var(--header-title-color, #000028);
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
-}
-
-.theme-dark .header_content{
-  color: #000028;
-  background-color: var(--accent-color, #ff0070);
-}
-
-.theme-dark .decorated-corner_top-right::before{
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
-}
-
-.theme-dark .decorated-corner_bottom-left::before {
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
-}
-
-.theme-dark  .rec-indicator__text {
-  color: var(--accent-color, #ff0070);
-}
-
-.theme-dark .rec-indicator__dot {
-  background: var(--accent-color, #ff0070);
-  box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
 }
