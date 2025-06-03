@@ -3,8 +3,6 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   inline-size: 100%;
-  background-color: var(--dark, #000028);
-  color: var(--dark, #000028);
 }
 
 .header{
@@ -79,16 +77,15 @@ button:focus-visible{
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
+.scpecial_form{
+  background-color: var(--accent-color, #ff0070);
+  color: var(--dark, #000028);
+  font-size: 18px;
+}
+
 .header_container{
   grid-area: content;
   inline-size: 355px;
-  background-color: var(--accent-color, #ff0070);
-}
-
-.header_content{
-  font-size: 18px;
-  text-wrap: wrap;
-  color: var(--dark, #000028);
 }
 
 .header_content-line {
@@ -162,6 +159,55 @@ button:focus-visible{
   background: var(--accent-color, #ff0070);
   box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
 }
+/* Блок main */
+
+.main{
+  padding: 10px;
+  background-color: var(--dark, #000028);
+}
+
+.main_grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-content);
+  gap: 50px;
+}
+
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.section_title{
+  color: var(--accent-color, #ff0070);
+}
+
+.post_content{
+  margin-top: 10px;
+  color: var(--title, #F1B2CE);
+  font-weight: normal;
+}
+
+.uniq{
+  font-weight: normal;
+}
+
+.content_photos{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, min-content);
+  gap: 10px;
+}
+
+.pictures{
+  inline-size: 355px;
+}
+
+
+/* Блок footer */
+
+
+
 
 @media (768px <= width < 1024px) {
   .header {
