@@ -41,26 +41,20 @@
   gap: 10px;
 }
 
-.header__theme-menu-button{
-  color: var(--accent-color);
-  background: transparent;
-  border: none;
-  text-transform: lowercase;
-}
-
 .header__theme-menu-item {
   inline-size: 70px;
   text-align: center;
   box-sizing: border-box;
 }
 
-.header__theme-menu-item:last-child{
-  border: 1px solid var(--accent-color, #ff0070);
+.header__theme-menu-button{
+  background: transparent;
+  border: none;
+  text-transform: lowercase;
 }
 
 .header__theme-menu-item:hover,
 .header__theme-menu-item:focus-within {
-  border: 1px solid var(--accent-color-hover, #ff0070);
   box-sizing: border-box;
   width: 100%;
 }
@@ -69,13 +63,8 @@ button:focus{
   outline: none;
 }
 
-button:focus{
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-}
 
 .header_title{
-  color: var(--header-title-color, #000028);
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   grid-area: title;
@@ -83,9 +72,7 @@ button:focus{
 
 .header_content{
   inline-size: minmax(355px, 491px);
-  color: #000028;
   font-size: 18px;
-  background-color: var(--accent-color, #ff0070);
   grid-area: content;
   text-wrap: wrap;
 }
@@ -122,15 +109,11 @@ button:focus{
 }
 
 .decorated-corner_top-right::before{
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
   width: 25px;
   height: 25px;
 }
 
 .decorated-corner_bottom-left::before {
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
   width: 25px;
   height: 25px;
 }
@@ -147,7 +130,6 @@ button:focus{
 }
 
 .rec-indicator__text {
-  color: var(--accent-color, #ff0070);
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
@@ -158,6 +140,4 @@ button:focus{
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--accent-color, #ff0070);
-  box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
 }
