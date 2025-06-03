@@ -18,8 +18,11 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span {
   margin: 0;
+  font-family: 'IBM Plex mono';
+  font-weight: bold;
 }
 
 ul {
@@ -36,7 +39,7 @@ picture {
 button,
 a {
   color: currentColor;
-  font-family: inherit;
-  font-size: inherit;
+  font-size: 18px;
   line-height: inherit;
+  font-family: 'IBM Plex mono';
 }

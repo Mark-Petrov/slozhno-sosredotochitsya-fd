@@ -2,3 +2,8 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root{
+  --header-title-color: #DB00FF;
+  --accent-color: #FF0070;
+  --accent-color-hover: rgba(255, 0, 112, 0.4);
+}
