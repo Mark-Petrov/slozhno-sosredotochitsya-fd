@@ -1,12 +1,10 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root{
   --fucsia: #DB00FF;
   --accent-color: #FF0070;
   --accent-color-hover: rgba(255, 0, 112, 0.4);
   --dark: #000028 ;
-  --bg-omage: url('../images/cover-image-dark.png');
+  --bg-image: url('../images/cover-image-dark.png');
   --title: #F1B2CE;
+  --bg-color: #000028;
+  --dark-text: #353430;
 }

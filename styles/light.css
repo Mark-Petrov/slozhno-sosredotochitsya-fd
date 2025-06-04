@@ -1,14 +1,10 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
   --fucsia: #FFC2E6;
   --accent-color: #FF8DCB;
   --accent-color-hover: rgba(50, 49, 45, 0.4);
   --bg-image: url('../images/cover-image-light.png');
+  --bg-color: #FFF1F7;
+  --title: #353430
 }
 
 .theme-light .header_title{
@@ -26,4 +22,23 @@
 
 .theme-light .rec-indicator {
   display: none;
+}
+
+.theme-light .section_title{
+  color: var(--dark-text, #353430);
+}
+
+.theme-light .post_content{
+  color: var(--dark-text, #353430);
+}
+
+
+.theme-light .decorated-corner_top-right {
+  border-top: 1px solid var(--dark-text, #353430);
+  border-right: 1px solid var(--dark-text, #353430);
+}
+
+.theme-light .decorated-corner_bottom-left {
+  border-bottom: 1px solid var(--dark-text, #353430);
+  border-left: 1px solid var(--dark-text, #353430);
 }

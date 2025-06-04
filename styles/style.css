@@ -1,14 +1,11 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  inline-size: 100%;
-  background-color: var(--dark, #000028);
+  max-width: 375px;
+  background-color: var(--bg-color, #000028);
 }
 
 .header{
   background-image: var(--bg-image, url('../images/cover-image-dark.png'));
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   inline-size: minmax(375px, 1024px);
   block-size: 668px;
@@ -56,8 +53,7 @@
   color: var(--accent-color);
 }
 
-.header__theme-menu-item:hover,
-.header__theme-menu-item:focus-within {
+.header__theme-menu-item:hover {
   box-sizing: border-box;
   border: 1px solid var(--accent-color-hover, #ff0070);
 }
@@ -66,8 +62,8 @@ button:focus{
   outline: none;
 }
 
-button:focus-visible{
-  border-bottom: 1px solid var(--accent-color, #ff0070);
+.header__theme-menu-item:focus-within{
+  border-bottom: 1px solid var(--accent-color-hover, #ff0070);
 }
 
 .header_title{
@@ -165,30 +161,61 @@ button:focus-visible{
 }
 /* Блок main */
 
-.main{
+.main {
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px 10px 10px 10px;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 .main_grid-container{
   display: grid;
-  grid-template-columns: repeat(auto-fit, min-content);
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, min-content);
   gap: 46px;
 }
 
 .content{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: max-content;
   gap: 20px;
 }
 
 .section_title{
   color: var(--accent-color, #ff0070);
+  inline-size: 355px;
 }
+
 
 .post_content{
   margin-top: 10px;
   color: var(--title, #F1B2CE);
   font-weight: normal;
+}
+
+.url-in-text{
+  text-decoration: none;
+  text-shadow: 2px 1px var(--accent-color, #ff0070);
+}
+
+.url-in-text:hover{
+  background-image: linear-gradient(var(--title, #F1B2CE), var(--title, #F1B2CE));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+.url-in-text:focus-visible {
+  border: 1px solid var(--title, #F1B2CE);
+  padding: 1px;
+  outline: none;
+}
+
+.container,
+.content .scpecial_form,
+.content_photos .scpecial_form{
+  max-width: 355px;
 }
 
 .uniq{
@@ -197,14 +224,19 @@ button:focus-visible{
 
 .content_photos{
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, min-content);
+  grid-template-columns: min-content;
   gap: 10px;
 }
 
 .pictures{
   inline-size: 355px;
+  object-fit: cover;
+  object-position: center;
 }
+
+.main_grid-container section:nth-of-type(3) p:first-of-type{
+    margin-bottom: 20px;
+  }
 
 
 /* Блок footer */
@@ -214,12 +246,20 @@ button:focus-visible{
   margin-top: 40px;
   position: relative;
   padding: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
 .focus_footer{
-  padding-top: 268px;
+  display: block;
   text-align: center;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--fucsia, #DB00FF);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
 .uniq_corner-top-right{
@@ -233,6 +273,11 @@ button:focus-visible{
 
 
 @media (768px <= width < 1024px) {
+
+  .page{
+    max-width: 768px;
+  }
+
   .header {
     grid-template-rows: 172px min-content 173px min-content 261px min-content 183px;
     block-size: 1024px;
@@ -263,9 +308,95 @@ button:focus-visible{
     top: 20px;
     right: 29px;
   }
+
+  .main{
+    padding: 20px;
+  }
+
+  .content,
+  .main_grid-container{
+    inline-size: 768px;
+  }
+
+  .section_title{
+    inline-size: 236px;
+  }
+
+  .container,
+  .content .scpecial_form,
+  .content_photos .scpecial_form{
+    max-width: 472px;
+    grid-column-start: 2;
+  }
+
+  .main_grid-container section:nth-of-type(2)  .container,
+  .main_grid-container section:nth-of-type(2) .scpecial_form{
+    grid-column: 1 / 2;
+    max-width: 728px;
+  }
+
+  .content_photos{
+    inline-size: 728px;
+    grid-template-columns: repeat(3, 230px);
+    grid-template-rows: 23px repeat(3, min-content);
+    gap: 20px;
+  }
+
+  .content_photos .scpecial_form{
+    inline-size: 728px;
+    grid-column-start: 1;
+   
+  }
+  
+  .content_photos .pictures:nth-child(2){
+    inline-size: 479px ;
+    block-size: 192px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+  }
+
+  .content_photos .pictures:nth-child(3){
+    inline-size: 229px ;
+    
+    block-size: 442px;
+    grid-column: 3 / 3;
+    grid-row: 2 / 4;
+  }
+
+  .content_photos .pictures:nth-child(4){
+    inline-size: 229px ;
+    block-size: 568px;
+    grid-column: 1 / 1;
+    grid-row: 3 / 4;
+  }
+
+  .content_photos .pictures:nth-child(5){
+    inline-size: 230px;
+    block-size: 230px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+  }
+
+  .content_photos .pictures:nth-child(6){
+    inline-size: 479px;
+    block-size: 318px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+    align-self: flex-end;
+  }
+
+  .footer{
+    block-size: 1024px;
+    margin-top: 60px;
+  }
 }
 
 @media (width >= 1024px) {
+
+  .page{
+    max-width: 1024px;
+  }
+
   .header {
     grid-template-rows: min-content 273px min-content 242px min-content 114px;
     grid-template-areas:
@@ -312,5 +443,100 @@ button:focus-visible{
   .rec-indicator {
     top: 20px;
     right: 29px;
+  }
+
+  .main{
+    padding: 20px;
+  }
+
+  .content,
+  .main_grid-container{
+    inline-size: 1024px;
+  }
+
+  .section_title{
+    inline-size: 315px;
+  }
+
+  .main_grid-container section:nth-of-type(1) .container,
+  .main_grid-container section:nth-of-type(3) .container,
+  .main_grid-container section:nth-of-type(1) .content .scpecial_form,
+  .main_grid-container section:nth-of-type(3) .content .scpecial_form,
+  .content_photos .scpecial_form{
+    inline-size: 649px;
+    grid-column-start: 2;
+  }
+
+  .container,
+  .content .scpecial_form,
+  .content_photos .scpecial_form{
+    max-width: 984px;
+  }
+
+  .main_grid-container section:nth-of-type(2){
+    inline-size: 984px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content;
+    gap: 20px;
+  }
+
+  .main_grid-container section:nth-of-type(2) .section_title{
+    grid-column: 1 / 4;
+    grid-row: 1 / 1;
+  }
+
+  .content_photos{
+    inline-size: 1024px;
+    grid-template-columns: repeat(3, 315px);
+    grid-template-rows: 23px repeat(3, min-content);
+    gap: 20px;
+  }
+
+  .content_photos .scpecial_form{
+    inline-size: 1024px;
+    grid-column-start: 1;
+  }
+  
+  .content_photos .pictures:nth-child(2){
+    inline-size: 650px ;
+    block-size: 260px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+  }
+
+  .content_photos .pictures:nth-child(3){
+    inline-size: 314px;
+    block-size: 595px;
+    grid-column: 3 / 3;
+    grid-row: 2 / 4;
+  }
+
+  .content_photos .pictures:nth-child(4){
+    inline-size: 315px ;
+    block-size: 768px;
+    grid-column: 1 / 1;
+    grid-row: 3 / 4;
+  }
+
+  .content_photos .pictures:nth-child(5){
+    inline-size: 315px;
+    block-size: 315px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+  }
+
+  .content_photos .pictures:nth-child(6){
+    inline-size: 649px;
+    block-size: 433px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 3;
+    align-self: flex-end;
+  }
+
+  .footer{
+    block-size: 768px;
+    margin-top: 60px;
   }
 }
