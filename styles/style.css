@@ -1,38 +1,39 @@
 .page {
   max-width: 375px;
   background-color: var(--bg-color, #000028);
-}
-
-.header{
   background-image: var(--bg-image, url('../images/cover-image-dark.png'));
   background-position: bottom;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header{
   inline-size: minmax(375px, 1024px);
-  block-size: 668px;
+  block-size: 100vh;
+  min-block-size: 668px;
   padding: 10px;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 65px min-content 65px min-content 55px min-content 56px;
+  grid-template-rows: 1fr min-content 1fr;
   grid-template-areas:
-    "."
     "nav"
-    "."
     "title"
-    "."
-    "content"
-    ".";
+    "content";
   position: relative;
 }
 
 .header__theme-menu{
   grid-area: nav;
   justify-items: end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header__theme-menu-list{
   inline-size: 70px;
-  block-size: 98px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,9 +73,12 @@ button:focus{
   grid-area: title;
   color: var(--fucsia, #DB00FF);
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 55px;
 }
 
-.scpecial_form{
+.title-decor {
   background-color: var(--accent-color, #ff0070);
   color: var(--dark, #000028);
   font-size: 18px;
@@ -83,52 +87,42 @@ button:focus{
 .header_container{
   grid-area: content;
   inline-size: 355px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header_content-line {
   display: block;
 }
 
-/* Декоративные уголки */
+/* Декоративные углы */
+.decorated-zone {
+  position: relative;
+}
 
-.decorated-corner {
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
   position: absolute;
   width: 25px;
   height: 25px;
   pointer-events: none;
-}
-
-.decorated-corner_top-right {
-  top: 10px;
-  right: 10px;
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
-}
-
-.decorated-corner_bottom-left {
-  bottom: 10px;
-  left: 10px;
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
-}
-
-.decorated-corner_top-right::before,
-.decorated-corner_bottom-left::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
 }
 
-.decorated-corner_top-right::before{
-  width: 25px;
-  height: 25px;
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--decor-corner, #ff0070);
+  border-right: 1px solid var(--decor-corner, #ff0070);
 }
 
-.decorated-corner_bottom-left::before {
-  width: 25px;
-  height: 25px;
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid var(--decor-corner, #ff0070);
+  border-left: 1px solid var(--decor-corner, #ff0070);
 }
 
 /* Декоративная надпись REC */
@@ -151,7 +145,9 @@ button:focus{
   color: var(--accent-color, #ff0070);
 }
 
-.rec-indicator__dot {
+/* Декоративный круг через псевдоэлемент */
+.rec-indicator::after {
+  content: "";
   display: inline-block;
   width: 9px;
   height: 9px;
@@ -159,6 +155,7 @@ button:focus{
   background: var(--accent-color, #ff0070);
   box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
 }
+
 /* Блок main */
 
 .main {
@@ -183,7 +180,7 @@ button:focus{
 }
 
 .section_title{
-  color: var(--accent-color, #ff0070);
+  color: var(--section-title, #ff0070);
   inline-size: 355px;
 }
 
@@ -200,10 +197,7 @@ button:focus{
 }
 
 .url-in-text:hover{
-  background-image: linear-gradient(var(--title, #F1B2CE), var(--title, #F1B2CE));
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
+  border-bottom: 1px solid var(--title, #F1B2CE);
 }
 
 .url-in-text:focus-visible {
@@ -213,8 +207,8 @@ button:focus{
 }
 
 .container,
-.content .scpecial_form,
-.content_photos .scpecial_form{
+.content .title-decor,
+.content_photos .title-decor{
   max-width: 355px;
 }
 
@@ -234,7 +228,7 @@ button:focus{
   object-position: center;
 }
 
-.main_grid-container section:nth-of-type(3) p:first-of-type{
+.title-decor--spaced{
     margin-bottom: 20px;
   }
 
@@ -242,8 +236,9 @@ button:focus{
 /* Блок footer */
 
 .footer{
-  block-size: 667px;
   margin-top: 40px;
+  block-size: 100vh;
+  min-block-size: 668px;
   position: relative;
   padding: auto;
   display: grid;
@@ -262,16 +257,6 @@ button:focus{
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
-.uniq_corner-top-right{
-  top: -2px;
-}
-
-.uniq_corner-bottom-left{
-  bottom: 21px;
-}
-
-
-
 @media (768px <= width < 1024px) {
 
   .page{
@@ -279,9 +264,7 @@ button:focus{
   }
 
   .header {
-    grid-template-rows: 172px min-content 173px min-content 261px min-content 183px;
     block-size: 1024px;
-    padding: 20px;
   }
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -292,16 +275,6 @@ button:focus{
   .header_container{
     inline-size: 364px;
     justify-self: end;
-  }
-
-  .decorated-corner_top-right {
-    top: 20px;
-    right: 20px;
-  }
-
-  .decorated-corner_bottom-left {
-    bottom: 20px;
-    left: 20px;
   }
 
   .rec-indicator {
@@ -315,7 +288,7 @@ button:focus{
 
   .content,
   .main_grid-container{
-    inline-size: 768px;
+    inline-size: 728px;
   }
 
   .section_title{
@@ -323,27 +296,26 @@ button:focus{
   }
 
   .container,
-  .content .scpecial_form,
-  .content_photos .scpecial_form{
-    max-width: 472px;
+  .content .title-decor,
+  .content_photos .title-decor{
+    max-width: 728px;
     grid-column-start: 2;
   }
 
-  .main_grid-container section:nth-of-type(2)  .container,
-  .main_grid-container section:nth-of-type(2) .scpecial_form{
+  .customize-for-medium{
     grid-column: 1 / 2;
     max-width: 728px;
   }
 
   .content_photos{
-    inline-size: 728px;
+    inline-size: 768px;
     grid-template-columns: repeat(3, 230px);
     grid-template-rows: 23px repeat(3, min-content);
     gap: 20px;
   }
 
-  .content_photos .scpecial_form{
-    inline-size: 728px;
+  .content_photos .title-decor{
+    inline-size: 768px;
     grid-column-start: 1;
    
   }
@@ -398,20 +370,12 @@ button:focus{
   }
 
   .header {
-    grid-template-rows: min-content 273px min-content 242px min-content 114px;
-    grid-template-areas:
-    "nav"
-    "."
-    "title"
-    "."
-    "content"
-    ".";
     block-size: 768px;
-    padding: 20px;
   }
 
   .header__theme-menu{
-    justify-items: center;
+    justify-content: center;
+    align-items: start;
   }
 
   .header__theme-menu-list{
@@ -419,34 +383,9 @@ button:focus{
     block-size: 26px;
     flex-direction: row;
   }
-  .header_title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    position: absolute;
-    left: -20px;
-  }
 
   .header_container{
     inline-size: 491px;
-    justify-self: end;
-  }
-
-  .decorated-corner_top-right {
-    top: 20px;
-    right: 20px;
-  }
-
-  .decorated-corner_bottom-left {
-    bottom: 20px;
-    left: 20px;
-  }
-
-  .rec-indicator {
-    top: 20px;
-    right: 29px;
-  }
-
-  .main{
-    padding: 20px;
   }
 
   .content,
@@ -458,31 +397,26 @@ button:focus{
     inline-size: 315px;
   }
 
-  .main_grid-container section:nth-of-type(1) .container,
-  .main_grid-container section:nth-of-type(3) .container,
-  .main_grid-container section:nth-of-type(1) .content .scpecial_form,
-  .main_grid-container section:nth-of-type(3) .content .scpecial_form,
-  .content_photos .scpecial_form{
+  .customize-for-large{
     inline-size: 649px;
     grid-column-start: 2;
   }
 
   .container,
-  .content .scpecial_form,
-  .content_photos .scpecial_form{
+  .content .title-decor,
+  .content_photos .title-decor{
     max-width: 984px;
   }
 
-  .main_grid-container section:nth-of-type(2){
+  .big-content{
     inline-size: 984px;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content;
     gap: 20px;
   }
 
-  .main_grid-container section:nth-of-type(2) .section_title{
+  .big-content .section_title{
     grid-column: 1 / 4;
     grid-row: 1 / 1;
   }
@@ -494,7 +428,7 @@ button:focus{
     gap: 20px;
   }
 
-  .content_photos .scpecial_form{
+  .content_photos .title-decor{
     inline-size: 1024px;
     grid-column-start: 1;
   }
@@ -537,6 +471,5 @@ button:focus{
 
   .footer{
     block-size: 768px;
-    margin-top: 60px;
   }
 }
