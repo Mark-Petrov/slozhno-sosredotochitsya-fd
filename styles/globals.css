@@ -21,7 +21,7 @@ h6,
 p,
 span {
   margin: 0;
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace, sans-serif;
   font-weight: bold;
   font-size: 18px;
 }
@@ -42,5 +42,5 @@ a {
   color: currentColor;
   font-size: 18px;
   line-height: inherit;
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace, sans-serif;
 }

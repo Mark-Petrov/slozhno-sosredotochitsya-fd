@@ -75,7 +75,7 @@ button:focus{
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
   justify-self: center;
   align-self: center;
-  margin-bottom: 55px;
+
 }
 
 .title-decor {
@@ -153,7 +153,7 @@ button:focus{
   height: 9px;
   border-radius: 50%;
   background: var(--accent-color, #ff0070);
-  box-shadow: 0 0 16px 6px var(--accent-color, #ff0070);
+  box-shadow: 0 0 10px 3px var(--accent-color, #ff0070);
 }
 
 /* Блок main */
@@ -170,7 +170,7 @@ button:focus{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, min-content);
-  gap: 46px;
+  gap: 44px;
 }
 
 .content{
@@ -222,6 +222,10 @@ button:focus{
   gap: 10px;
 }
 
+.content_photos:has(.title-decor){
+  margin-top: 2px;
+}
+
 .pictures{
   inline-size: 355px;
   object-fit: cover;
@@ -240,7 +244,7 @@ button:focus{
   block-size: 100vh;
   min-block-size: 668px;
   position: relative;
-  padding: auto;
+  padding: 0 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -255,6 +259,15 @@ button:focus{
   line-height: 82.5%;
   color: var(--fucsia, #DB00FF);
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  margin-bottom: 20px;
+}
+
+.footer.decorated-zone::before {
+  top: 0px;
+}
+
+.footer.decorated-zone::after {
+  bottom: 20px;
 }
 
 @media (768px <= width < 1024px) {
@@ -266,15 +279,33 @@ button:focus{
   .header {
     block-size: 1024px;
   }
+
+  .decorated-zone::before {
+  top: 20px;
+  right: 20px;
+}
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__theme-menu{
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }
+
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     position: absolute;
-    left: -20px;
+    left: -10px;
   }
 
   .header_container{
     inline-size: 364px;
     justify-self: end;
+    margin-right: 10px;
+    margin-top: 40px;
   }
 
   .rec-indicator {
@@ -284,6 +315,14 @@ button:focus{
 
   .main{
     padding: 20px;
+  }
+
+  .content{
+    margin-top: 40px;
+    gap: 19px;
+  }
+  .main_grid-container{
+    gap: 38px;
   }
 
   .content,
@@ -307,6 +346,10 @@ button:focus{
     max-width: 728px;
   }
 
+  .content.big-padding{
+    margin-bottom: 41px;
+  }
+
   .content_photos{
     inline-size: 768px;
     grid-template-columns: repeat(3, 230px);
@@ -316,8 +359,7 @@ button:focus{
 
   .content_photos .title-decor{
     inline-size: 768px;
-    grid-column-start: 1;
-   
+    grid-column-start: 1;   
   }
   
   .content_photos .pictures:nth-child(2){
@@ -359,7 +401,14 @@ button:focus{
 
   .footer{
     block-size: 1024px;
-    margin-top: 60px;
+    margin-top: 40px;
+  }
+  .footer.decorated-zone::after {
+    bottom: 40px;
+  }
+
+  .focus_footer{
+    margin-bottom: 40px;
   }
 }
 
@@ -369,13 +418,38 @@ button:focus{
     max-width: 1024px;
   }
 
+  .main{
+    padding-top: 60px;
+    padding-left: 20px;
+  }
+
+  .main_grid-container{
+    gap: 78px;
+  }
+
   .header {
     block-size: 768px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rec-indicator {
+    top: 20px;
+    right:29px;
   }
 
   .header__theme-menu{
     justify-content: center;
     align-items: start;
+    margin-top: 10px;
   }
 
   .header__theme-menu-list{
@@ -386,6 +460,15 @@ button:focus{
 
   .header_container{
     inline-size: 491px;
+    justify-self: end;
+    margin-right: 10px;
+    margin-top: 53px;
+  }
+
+  .header_title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    position: absolute;
+    left: -10px;
   }
 
   .content,
@@ -471,5 +554,17 @@ button:focus{
 
   .footer{
     block-size: 768px;
+  }
+
+  .focus_footer{
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .footer.decorated-zone::before {
+    top: 5px;
+  }
+
+  .footer.decorated-zone::after {
+    bottom: 35px;
   }
 }
