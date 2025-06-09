@@ -71,6 +71,8 @@ button:focus{
   border-bottom: 1px solid var(--accent-color-focus, #ff0070);
 }
 
+
+
 .header_title{
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
