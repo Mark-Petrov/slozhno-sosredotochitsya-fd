@@ -1,5 +1,4 @@
 .page {
-  max-width: 375px;
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image, url('../images/cover-image-dark.png'));
   background-position: bottom;
@@ -8,8 +7,13 @@
   background-attachment: fixed;
 }
 
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header{
-  inline-size: minmax(375px, 1024px);
   block-size: 100vh;
   min-block-size: 668px;
   padding: 10px;
@@ -64,7 +68,7 @@ button:focus{
 }
 
 .header__theme-menu-item:focus-within{
-  border-bottom: 1px solid var(--accent-color-hover, #ff0070);
+  border-bottom: 1px solid var(--accent-color-focus, #ff0070);
 }
 
 .header_title{
@@ -272,9 +276,9 @@ button:focus{
 
 @media (768px <= width < 1024px) {
 
-  .page{
+  /* .page{
     max-width: 768px;
-  }
+  } */
 
   .header {
     block-size: 1024px;
@@ -414,9 +418,9 @@ button:focus{
 
 @media (width >= 1024px) {
 
-  .page{
+  /* .page{
     max-width: 1024px;
-  }
+  } */
 
   .main{
     padding-top: 60px;
