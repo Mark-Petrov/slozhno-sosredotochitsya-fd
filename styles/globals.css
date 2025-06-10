@@ -1,3 +1,5 @@
+/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
+
 *,
 *::before,
 *::after {
@@ -16,12 +18,8 @@ h3,
 h4,
 h5,
 h6,
-p,
-span {
+p {
   margin: 0;
-  font-family: 'IBM Plex mono', monospace, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
 }
 
 ul {
@@ -38,7 +36,7 @@ picture {
 button,
 a {
   color: currentColor;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: inherit;
   line-height: inherit;
-  font-family: 'IBM Plex mono', monospace, sans-serif;
 }

@@ -1,3 +1,21 @@
-.theme-dark .header__theme-menu-item:last-child{
-  border: 1px solid var(--accent-color, #ff0070);
+:root.theme-dark {
+  --page-bg-color: url(../images/cover-image-dark.png);
+  --font-size: 1.125em;
+  --bg-color: #000028;
+  --accent-color: #FF0070;
+  --border-button-color: rgba(255, 0, 112, 0.40);
+  --accent-text-color: #FF0070;
+  --link-color: #F1B2CE;
+  --accent-shadow-color: #FF0070;
+  --accent-bg-color: #FF0070;
+  --font-family: 'IBM Plex mono';
+  --menu-button-active: #ff0070;
+  --header-title: #DB00FF;
+  --shadow-title: #FF0070;
+  --accent-bg-text-color: #000028;
+  --text-color: #f1b2ce;
+}
+
+.theme-dark .header-decorated {
+  display: block;
 }

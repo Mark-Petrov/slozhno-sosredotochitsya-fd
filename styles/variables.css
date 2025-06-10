@@ -1,13 +1,18 @@
-:root{
-  --fucsia: #DB00FF;
-  --accent-color: #FF0070;
-  --accent-color-hover: rgba(255, 0, 112, 0.4);
-  --accent-color-focus: #ff0070;
-  --dark: #000028 ;
-  --bg-image: url('../images/cover-image-dark.png');
-  --title: #F1B2CE;
+:root {
+  --page-bg-color: url(../images/cover-image-dark.png);
   --bg-color: #000028;
-  --dark-text: #353430;
-  --decor-corner: #FF0070;
-  --section-title: #FF0070;
+  --font-size: 1.125em;
+  --accent-color: #FF0070;
+  --border-button-color: rgba(255, 0, 112, 0.40);
+  --accent-text-color: #FF0070;
+  --link-color: #F1B2CE;
+  --accent-shadow-color: #FF0070;
+  --accent-bg-color: #FF0070;
+  --font-family: 'IBM Plex mono';
+  --menu-button-active: #ff0070;
+  --header-title: #DB00FF;
+  --shadow-title: #FF0070;
+  --accent-bg-text-color: #000028;
+  --text-color: #f1b2ce;
 }
+
